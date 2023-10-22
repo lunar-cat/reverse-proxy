@@ -11,11 +11,13 @@ export const blockedRequests: BlockedRequest[] = [
 
 export const modifiedRequests: ModifiedRequest[] = [
   {
-    description: 'Test',
+    description: 'Example with Local API',
     method: ['GET'],
     url: /test$/,
-    active: false,
+    active: true,
     modifyFunction: (body: TestResponse<TestBody>) => {
+      body.data = { info: "Hardcoded Error Message" };
+      body.success = false;
       return body;
     }
   }

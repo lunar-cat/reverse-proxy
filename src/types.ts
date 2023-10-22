@@ -14,11 +14,10 @@ export interface ModifiedRequest {
 }
 
 export interface TestResponse<T> {
-  message: string;
   success: boolean;
   data?: T;
 }
 
 export interface TestBody {
-  prop: number;
+  info: string;
 }

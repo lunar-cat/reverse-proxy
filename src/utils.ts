@@ -8,6 +8,6 @@ export const wait = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
 export const handleBloquedRequest = async (response: http.ServerResponse) => {
   await wait(ERROR_DELAY_MS);
-  response.writeHead(ERROR_HTTP_CODE, { 'Content-Type': 'application-json' });
-  response.end(ERROR_RESPONSE);
+  response.writeHead(ERROR_HTTP_CODE, { 'Content-Type': 'application/json' });
+  return response.end(JSON.stringify(ERROR_RESPONSE));
 };
